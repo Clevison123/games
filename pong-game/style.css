@@ -22,3 +22,18 @@
   border-radius: 15px;
   cursor: pointer;
 }
+
+#controls{
+  display: none; /* só aparece em tablet/celular via media query */
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#controls button{
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+}

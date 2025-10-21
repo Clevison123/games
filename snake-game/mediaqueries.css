@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+/* Tablets maiores */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #gameBoard {
+    width: 550px;
+    height: 550px;
+  }
+
+  #scoreText {
+    font-size: 80px;
+  }
+
+  #resetBtn {
+    font-size: 22px;
+    width: 100px;
+    height: 50px;
+  }
+
+  /* Esconder controles em tablets maiores */
+  #controls {
+    display: none;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #gameBoard {
+    width: 450px;
+    height: 450px;
+  }
+
+  #scoreText {
+    font-size: 70px;
+  }
+
+  #resetBtn {
+    font-size: 20px;
+    width: 90px;
+    height: 45px;
+  }
+
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  #controls button {
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #gameBoard {
+    width: 300px;
+    height: 300px;
+  }
+
+  #scoreText {
+    font-size: 50px;
+  }
+
+  #resetBtn {
+    font-size: 18px;
+    width: 80px;
+    height: 40px;
+  }
+
+  /* Mostrar controles no mobile */
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  #controls button {
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 400px) {
+  #gameBoard {
+    width: 250px;
+    height: 250px;
+  }
+
+  #scoreText {
+    font-size: 40px;
+  }
+
+  #resetBtn {
+    font-size: 16px;
+    width: 70px;
+    height: 35px;
+  }
+
+  #controls{
+    display: none;
+  }
+}
+
+/* Mini celulares */
+@media (max-width: 320px) {
+  #gameBoard {
+    width: 200px;
+    height: 200px;
+  }
+
+  #scoreText {
+    font-size: 30px;
+  }
+
+  #resetBtn {
+    font-size: 14px;
+    width: 60px;
+    height: 30px;
+  }
+
+  #controls{
+    display: none;
+  }
+}

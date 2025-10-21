@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game of Pong</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
 
@@ -12,6 +13,12 @@
     <canvas id="gameBoard" width="500" height="500"></canvas>
     <div id="scoreText">0 : 0</div>
     <button id="resetBtn">Reset</button>
+
+    <!-- Controles para tablets/celulares -->
+    <div id="controls">
+      <button id="upBtn">↑</button>
+      <button id="downBtn">↓</button>
+    </div>
   </div>
   
   <script src="script.js"></script>

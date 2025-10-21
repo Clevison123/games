@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/*Tablets*/
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  button {
+    padding: 1.2rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  #buttonContainer {
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+}
+
+/*Mobile*/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+    padding: 0.7rem 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  button {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  #buttonContainer {
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+}
+
+/*celulares*/
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+  }
+
+  button {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  #buttonContainer {
+    gap: 0.5rem;
+    margin: 0.8rem 0;
+  }
+}
+
+/*Mini celulares*/
+@media (max-width: 320px) {
+  h1 {
+    font-size: 1.3rem;
+    padding: 0.5rem 0.8rem;
+    margin: 0.8rem 0;
+  }
+
+  button {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  #buttonContainer {
+    gap: 0.4rem;
+    margin: 0.6rem 0;
+  }
+}
