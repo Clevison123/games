@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-/* Desktop (ocultar controles) */
+/* Desktop  */
 #controls {
   display: none;
 }
 
-/* Tablets grandes (601px a 1024px) */
+/* Tablets grandes*/
 @media (min-width: 601px) and (max-width: 1024px) {
   #gameBoard {
     width: 450px;
@@ -22,13 +22,11 @@
     height: 45px;
   }
 
-  /* Mostrar controles */
-  #controls {
+ #controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
   }
 
   #controls button {
@@ -38,7 +36,7 @@
   }
 }
 
-/* Tablets menores (401px a 600px) */
+/* Tablets menores*/
 @media (min-width: 401px) and (max-width: 600px) {
   #gameBoard {
     width: 300px;
@@ -55,23 +53,21 @@
     height: 40px;
   }
 
-  /* Mostrar controles também */
-  #controls {
+ #controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 10px;
   }
 
   #controls button {
-    font-size: 16px;
-    width: 45px;
-    height: 45px;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
   }
 }
 
-/* Celulares e mini celulares (até 400px) */
+/* Celulares */
 @media (max-width: 400px) {
   #gameBoard {
     width: 250px;
@@ -89,10 +85,20 @@
   }
 
   #controls {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #controls button {
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
   }
 }
 
+/* mini celulares */
 @media (max-width: 320px) {
   #gameBoard {
     width: 200px;
@@ -109,7 +115,9 @@
     height: 30px;
   }
 
-  #controls {
-    display: none;
+  #controls button {
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
   }
 }

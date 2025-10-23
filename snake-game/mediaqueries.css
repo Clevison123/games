@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
-/* 🖥️ Desktop – esconder controles */
+/*Desktop – esconder controles */
 #controls {
   display: none;
 }
 
-/* 💻 Tablets Maiores (1025px–1280px) */
+/*Tablets Maiores*/
 @media (min-width: 1025px) and (max-width: 1280px) {
   #gameBoard {
-    width: 450px;
-    height: 450px;
+    width: 420px;
+    height: 420px;
   }
-
+  
   #scoreText {
-    font-size: 80px;
+    font-size: 70px;
   }
 
   #resetBtn {
-    font-size: 22px;
+    font-size: 20px;
     width: 100px;
     height: 50px;
   }
@@ -27,19 +27,19 @@
   }
 
   #controls button {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     font-size: 24px;
   }
 }
 
-/* 📱 Tablets (601px–1024px) */
+/*Tablets*/
 @media (min-width: 601px) and (max-width: 1024px) {
   #gameBoard {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
   }
-
+  
   #scoreText {
     font-size: 70px;
   }
@@ -55,19 +55,19 @@
   }
 
   #controls button {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
   }
 }
 
-/* 📲 Celulares (até 600px) */
+/*Celulares*/
 @media (max-width: 600px) {
   #gameBoard {
     width: 300px;
     height: 300px;
   }
-
+  
   #scoreText {
     font-size: 50px;
   }
@@ -83,19 +83,19 @@
   }
 
   #controls button {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
   }
 }
 
-/* 📱 Celulares Pequenos (até 400px) */
+/*Celulares Pequenos*/
 @media (max-width: 400px) {
   #gameBoard {
     width: 250px;
     height: 250px;
   }
-
+  
   #scoreText {
     font-size: 40px;
   }
@@ -111,13 +111,13 @@
   }
 
   #controls button {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
   }
 }
 
-/* 📱 Mini Celulares (até 320px) */
+/*Mini Celulares*/
 @media (max-width: 320px) {
   #gameBoard {
     width: 200px;
@@ -139,8 +139,8 @@
   }
 
   #controls button {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
   }
 }

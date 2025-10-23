@@ -23,17 +23,27 @@
   cursor: pointer;
 }
 
-#controls{
-  display: none; /* só aparece em tablet/celular via media query */
-  gap: 10px;
-  justify-content: center;
-  margin-top: 10px;
+#controls {
+  position: fixed;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
 }
 
-#controls button{
-  font-size: 24px;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
+
+#controls button {
+  font-size: 32px;       
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;    
   cursor: pointer;
+  background-color: #1e3a8a; 
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s;
 }
+
