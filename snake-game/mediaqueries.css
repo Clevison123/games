@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
-/* Tablets maiores */
+/* 🖥️ Desktop – esconder controles */
+#controls {
+  display: none;
+}
+
+/* 💻 Tablets Maiores (1025px–1280px) */
 @media (min-width: 1025px) and (max-width: 1280px) {
   #gameBoard {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
   }
 
   #scoreText {
@@ -17,13 +22,18 @@
     height: 50px;
   }
 
-  /* Esconder controles em tablets maiores */
   #controls {
-    display: none;
+    display: grid;
+  }
+
+  #controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 }
 
-/* Tablets */
+/* 📱 Tablets (601px–1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   #gameBoard {
     width: 450px;
@@ -41,22 +51,17 @@
   }
 
   #controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
+    display: grid;
   }
 
   #controls button {
-    font-size: 18px;
-    width: 50px;
-    height: 50px;
-    margin: 5px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 }
 
-/* Mobile */
+/* 📲 Celulares (até 600px) */
 @media (max-width: 600px) {
   #gameBoard {
     width: 300px;
@@ -73,24 +78,18 @@
     height: 40px;
   }
 
-  /* Mostrar controles no mobile */
   #controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
+    display: grid;
   }
 
   #controls button {
-    font-size: 18px;
     width: 50px;
     height: 50px;
-    margin: 5px;
+    font-size: 22px;
   }
 }
 
-/* Celulares */
+/* 📱 Celulares Pequenos (até 400px) */
 @media (max-width: 400px) {
   #gameBoard {
     width: 250px;
@@ -107,12 +106,18 @@
     height: 35px;
   }
 
-  #controls{
-    display: none;
+  #controls {
+    display: grid;
+  }
+
+  #controls button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
 }
 
-/* Mini celulares */
+/* 📱 Mini Celulares (até 320px) */
 @media (max-width: 320px) {
   #gameBoard {
     width: 200px;
@@ -129,7 +134,13 @@
     height: 30px;
   }
 
-  #controls{
-    display: none;
+  #controls {
+    display: grid;
+  }
+
+  #controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
