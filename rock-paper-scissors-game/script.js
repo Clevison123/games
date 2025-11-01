@@ -6,19 +6,30 @@ function getComputerMove() {
 }
 
 function determineResult(playerMove, computerMove) {
-  if (playerMove === computerMove) return 'Tie.';
+  if (playerMove === computerMove) return 'Tie';
   if (
     (playerMove === 'rock' && computerMove === 'scissors') ||
     (playerMove === 'paper' && computerMove === 'rock') ||
     (playerMove === 'scissors' && computerMove === 'paper')
   ) {
-    return 'You win.';
+    return 'You Win!';
   }
-  return 'You lose.';
+  return 'You Lose!';
 }
 
 function playGame(playerMove) {
   const computerMove = getComputerMove();
   const result = determineResult(playerMove, computerMove);
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+
+  // Atualiza o conteúdo do modal
+  document.getElementById("resultText").textContent = result;
+  document.getElementById("playerChoice").textContent = `You picked: ${playerMove}`;
+  document.getElementById("computerChoice").textContent = `Computer picked: ${computerMove}`;
+
+  // Exibe o modal
+  document.getElementById("resultModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("resultModal").style.display = "none";
 }

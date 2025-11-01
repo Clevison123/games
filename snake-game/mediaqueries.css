@@ -57,7 +57,7 @@
   #controls button {
     width: 50px;
     height: 50px;
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
@@ -83,9 +83,9 @@
   }
 
   #controls button {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }
 
@@ -111,9 +111,9 @@
   }
 
   #controls button {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }
 
@@ -139,8 +139,8 @@
   }
 
   #controls button {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }

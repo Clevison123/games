@@ -23,11 +23,13 @@ let yvelocity = 0;
 let foodX, foodY;
 let score = 0;
 let snake = [];
+let speed = 200; // Velocidade inicial (quanto maior, mais devagar)
 
 // ====== Inicializar Jogo ======
 function initializeGame() {
   running = true;
   score = 0;
+  speed = 200; // Reinicia a velocidade ao começar um novo jogo
   scoreText.textContent = score;
 
   // Criar cobrinha inicial
@@ -54,7 +56,7 @@ function nextTick() {
       drawSnake();
       checkGameOver();
       nextTick();
-    }, 85);
+    }, speed);
   } else {
     displayGameOver();
   }
@@ -98,6 +100,11 @@ function moveSnake() {
     score += 1;
     scoreText.textContent = score;
     createFood();
+
+    // Aumenta a velocidade (cobra fica mais rápida)
+    if (speed > 60) { // Velocidade mínima
+      speed -= 10; // Reduz o tempo do setTimeout → mais rápida
+    }
   } else {
     snake.pop();
   }
