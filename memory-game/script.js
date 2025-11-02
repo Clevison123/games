@@ -4,7 +4,7 @@ const resetBtn = document.getElementById("resetBtn");
 const movesText = document.getElementById("moves");
 const timeText = document.getElementById("time");
 
-const icons = ["🍎","🍌","🍇","🍉","🍒","🍓","🍍","🥝"];
+const icons = ["🍎","🍌","🍇","🍉","🍒","🍓","🍍","🥝","🍑","🥭"];
 let cardsArray = [...icons, ...icons];
 
 let firstCard, secondCard;
@@ -85,7 +85,10 @@ function disableCards() {
   if (matchedPairs === icons.length) {
     clearInterval(timer);
     setTimeout(() => {
-      alert(`🎉 You won in ${moves} moves and ${time} seconds!`);
+      const modal = document.getElementById("victoryModal");
+      const message = document.getElementById("victoryMessage");
+      message.textContent = `You won in ${moves} moves and ${time} seconds!`;
+      modal.style.display = "flex";
     }, 500);
   }
 }
@@ -116,6 +119,12 @@ function startTimer() {
 
 // Reset button
 resetBtn.addEventListener("click", createBoard);
+
+// Modal "Play Again" button
+document.getElementById("playAgainBtn").addEventListener("click", () => {
+  document.getElementById("victoryModal").style.display = "none";
+  createBoard();
+});
 
 // Init game
 createBoard();

@@ -3,7 +3,7 @@
 /*Tablets */
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
-    padding-top: 80px;
+    padding-top: 10px;
   }
 
   h1 {
@@ -20,14 +20,13 @@
   }
 
   .game-board {
-    grid-template-columns: repeat(4, 90px);
-    grid-gap: 12px;
+    grid-template-columns: repeat(4, 80px);
     margin-top: 40px;
   }
 
   .card {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   .card-front, .card-back {
@@ -39,7 +38,7 @@
 @media (max-width: 600px) {
   body {
     padding: 10px;
-    padding-top: 60px;
+    padding-top: 10px;
   }
 
   h1 {
@@ -47,7 +46,6 @@
   }
 
   .scoreboard {
-    flex-direction: column;
     gap: 6px;
     font-size: 1rem;
   }
@@ -60,7 +58,6 @@
 
   .game-board {
     grid-template-columns: repeat(4, 80px);
-    grid-gap: 10px;
     margin-top: 30px;
   }
 
@@ -76,6 +73,11 @@
 
 /*celulares*/
 @media (max-width: 400px) {
+  body {
+    padding-top: 10px;
+    
+  }
+
   h1 {
     font-size: 1.2rem;
   }
@@ -92,7 +94,6 @@
 
   .game-board {
     grid-template-columns: repeat(4, 70px);
-    grid-gap: 6px;
     margin-top: 20px;
   }
 
@@ -109,27 +110,29 @@
 /*Pequenos celulares*/
 @media (max-width: 320px) {
   body {
-    padding-top: 70px;
+    padding-top: 10px;
+    
   }
 
   h1 {
     font-size: 1.1rem;
+    margin-bottom: 5px;
   }
 
   .scoreboard {
     font-size: 0.9rem;
     gap: 4px;
+    margin-bottom: 5px;
   }
 
   #resetBtn {
     font-size: 0.85rem;
     padding: 6px 12px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
   }
 
   .game-board {
-    grid-template-columns: repeat(4, 70px);
-    grid-gap: 5px;
+    grid-template-columns: repeat(4, 65px);
     margin-top: 15px;
   }
 
