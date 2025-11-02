@@ -1,4 +1,6 @@
-/* General style */
+
+* { -webkit-tap-highlight-color: transparent; outline: none;}
+
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;

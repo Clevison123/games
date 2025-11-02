@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+* { -webkit-tap-highlight-color: transparent; outline: none;}
+
 #gameContainer{
   text-align: center;
 }
