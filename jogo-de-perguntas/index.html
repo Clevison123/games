@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jogo de Perguntas - Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Jogo de Perguntas</h1>
+      <p class="subtitle">Teste seus conhecimentos — perguntas embaralhadas, respostas imediatas e pontuação no final.</p>
+    </header>
+
+    <section id="inicio" class="card">
+      <label for="nomeJogador">Seu nome</label>
+      <input id="nomeJogador" type="text" placeholder="Digite seu nome..." />
+
+      <label for="quantidade">Quantidade de perguntas</label>
+      <select id="quantidade">
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+        <option value="all">Todas</option>
+      </select>
+
+      <div class="controls-row">
+        <button id="btnIniciar" class="primary">Iniciar Jogo</button>
+        <button id="btnIniciarFull">Iniciar (Todas)</button>
+      </div>
+    </section>
+
+    <section id="jogo" class="card hidden">
+      <div class="top-row">
+        <div id="playerInfo">Jogador: <strong id="nomeDisplay"></strong></div>
+        <div id="score">Pontuação: <span id="pontuacao">0</span></div>
+      </div>
+
+      <div class="progress-bar" aria-hidden="true">
+        <div id="progressFill"></div>
+      </div>
+
+      <h2 id="perguntaTexto" class="question"></h2>
+
+      <div id="opcoes" class="options"></div>
+
+      <div class="controls-row">
+        <button id="btnProxima" class="secondary hidden">Próxima</button>
+        <button id="btnDesistir" class="muted">Desistir</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="card hidden">
+      <h2 id="mensagemFinal"></h2>
+      <p id="detalhesResultado"></p>
+      <div class="controls-row">
+        <button id="reiniciar" class="primary">Reiniciar</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
