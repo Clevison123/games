@@ -1,4 +1,3 @@
-/* CLASSES (abstração / herança)*/
 class Pergunta {
   constructor(enunciado, opcoes, corretaLetter) {
     this.enunciado = enunciado;
@@ -23,7 +22,6 @@ class PerguntaMultiplaEscolha extends Pergunta {
       const j = Math.floor(Math.random() * (i + 1));
       [this.opcoes[i], this.opcoes[j]] = [this.opcoes[j], this.opcoes[i]];
     }
-    // recalcular letra correta após embaralhar
     for (let i = 0; i < this.opcoes.length; i++) {
       if (this.opcoes[i] === corretaText) {
         this.respostaCorreta = String.fromCharCode(65 + i);
@@ -41,11 +39,8 @@ class Jogador {
   addPonto() { this.pontuacao++; }
 }
 
-/* ---------- BASE DE PERGUNTAS ---------- */
 const bancoPerguntas = (() => {
   const arr = [];
-
-  // --- Perguntas  ---
   arr.push(new PerguntaMultiplaEscolha("Qual a capital do Brasil?", ["São Paulo","Rio de Janeiro","Brasília","Salvador"], "C"));
   arr.push(new PerguntaMultiplaEscolha("Quantos planetas há no Sistema Solar?", ["7","8","9","10"], "B"));
   arr.push(new PerguntaMultiplaEscolha("Quem desenvolveu a Teoria da Relatividade?", ["Newton","Einstein","Galileu","Tesla"], "B"));
@@ -57,7 +52,6 @@ const bancoPerguntas = (() => {
   arr.push(new PerguntaMultiplaEscolha("Qual é o maior animal terrestre?", ["Elefante africano","Baleia azul","Girafa","Hipopótamo"], "A"));
   arr.push(new PerguntaMultiplaEscolha("Qual é a moeda oficial do Japão?", ["Won","Iene","Yuan","Rupia"], "B"));
 
-  // --- Novas perguntas ---
   const novas = [
     ["Qual é o maior animal do planeta?", ["Elefante", "Baleia Azul", "Girafa", "Orca"], "B"],
     ["Qual planeta é conhecido como o 'Planeta Vermelho'?", ["Vênus", "Marte", "Júpiter", "Saturno"], "B"],
@@ -106,16 +100,12 @@ const bancoPerguntas = (() => {
     ["Qual planeta é conhecido por seus ventos fortes e cor azul?", ["Urano", "Netuno", "Vênus", "Mercúrio"], "B"],
     ["Qual é a capital da Itália?", ["Veneza", "Roma", "Milão", "Nápoles"], "B"],
     ["Quem escreveu 'Dom Quixote'?", ["Machado de Assis", "Shakespeare", "Miguel de Cervantes", "Camões"], "C"],
-    ["Qual é o nome do personagem principal de 'Toy Story'?", ["Woody", "Buzz", "Andy", "Jessie"], "A"],
+    ["Qual é o nome do personagem principal de 'Toy Story'?", ["Woody", "Buzz", "Andy", "Jessie"], "A"]
   ];
-
   novas.forEach(n => arr.push(new PerguntaMultiplaEscolha(n[0], n[1], n[2])));
-
   return arr;
 })();
 
-
-/*Jogo (controller) */
 class Jogo {
   constructor(banco) {
     this.bancoOriginal = banco.slice();
@@ -126,14 +116,13 @@ class Jogo {
     this.perguntasPool = this.bancoOriginal.slice();
     this.jogador = null;
     this.indice = 0;
-    this.selecoes = []; // para CSV: {pergunta, opcaoEscolhida, correta}
+    this.selecoes = [];
     this.totalSelecionado = 0;
   }
 
   iniciar(nome, quantidade) {
     this.reset();
     this.jogador = new Jogador(nome || "Jogador");
-    // embaralhar banco e cortar pela quantidade
     this.perguntasPool = this.perguntasPool.sort(() => Math.random() - 0.5);
     if (quantidade !== 'all') {
       const n = parseInt(quantidade, 10) || 20;
@@ -171,7 +160,6 @@ class Jogo {
   }
 }
 
-/* DOM / UI */
 const jogo = new Jogo(bancoPerguntas);
 
 const $inicio = document.getElementById('inicio');
@@ -218,7 +206,6 @@ function renderPergunta() {
   const p = jogo.perguntaAtual();
   $perguntaTexto.textContent = `Q${jogo.indice + 1}. ${p.enunciado}`;
   $opcoes.innerHTML = '';
-  // criar botões para cada opção
   p.opcoes.forEach((texto, i) => {
     const letra = String.fromCharCode(65 + i);
     const btn = document.createElement('button');
@@ -228,73 +215,50 @@ function renderPergunta() {
     $opcoes.appendChild(btn);
   });
   $btnProxima.classList.add('hidden');
-
-  // atualizar progresso
   const pct = jogo.progressoPercent();
   $progressFill.style.width = `${pct}%`;
 }
 
 function handleResposta(btn) {
-  // desabilitar todos os botões
   const botoes = $opcoes.querySelectorAll('button');
   botoes.forEach(b => b.disabled = true);
-
   const letra = btn.dataset.letra;
   const { certo, correta } = jogo.responder(letra);
-
-  // destacar botões
-  if (certo) {
-    btn.classList.add('btn-correct');
-  } else {
+  if (certo) btn.classList.add('btn-correct');
+  else {
     btn.classList.add('btn-wrong');
-    // marcar botão correto
     botoes.forEach(b => {
       if (b.dataset.letra === correta) b.classList.add('btn-correct');
     });
   }
-
-  // atualizar pontuação
   $pontuacao.textContent = jogo.jogador.pontuacao;
   $btnProxima.classList.remove('hidden');
 }
 
 $btnProxima.addEventListener('click', () => {
   const temProxima = jogo.avancar();
-  if (temProxima) {
-    renderPergunta();
-  } else {
-    finalizarUI();
-  }
+  if (temProxima) renderPergunta();
+  else finalizarUI();
 });
 
 $btnDesistir.addEventListener('click', () => {
-  if (confirm("Deseja realmente desistir? Sua pontuação será exibida.")) {
-    finalizarUI();
-  }
+  if (confirm("Deseja realmente desistir? Sua pontuação será exibida.")) finalizarUI();
 });
 
 function finalizarUI() {
   $jogo.classList.add('hidden');
   $resultado.classList.remove('hidden');
-
   $mensagemFinal.textContent = `🏆 ${jogo.jogador.nome}, sua pontuação final foi: ${jogo.jogador.pontuacao} ponto(s).`;
   $detalhesResultado.textContent = `Você respondeu ${jogo.selecoes.length} de ${jogo.totalSelecionado} perguntas.`;
-
   $progressFill.style.width = `100%`;
 }
 
 $reiniciar.addEventListener('click', () => {
-  jogo.reset();
+  iniciarUI($quantidade.value === 'all');
   $nomeJogador.value = '';
-  $inicio.classList.remove('hidden');
-  $jogo.classList.add('hidden');
-  $resultado.classList.add('hidden');
   $progressFill.style.width = `0%`;
 });
 
-/* Accessibility: permitir avançar com Enter na próxima */
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !$btnProxima.classList.contains('hidden')) {
-    $btnProxima.click();
-  }
+  if (e.key === 'Enter' && !$btnProxima.classList.contains('hidden')) $btnProxima.click();
 });
