@@ -2,6 +2,7 @@
   --bg: #0f1724;          
   --card: #111827;     
   --card-2: #16213e;       
+  --question-color: #cbd5e1;
   --text: #e6eef8;         
   --muted: #9aa7bf;       
   --accent: #1e3a8a;     
@@ -36,7 +37,7 @@ button.primary{background:var(--accent);color:white}
 button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
 button.hidden{display:none}
 
-.question{font-size:1.15rem;margin:8px 0 12px}
+.question{font-size:1.15rem;color: var(--question-color) !important; margin:8px 0 12px}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .options button{
   text-align:left;padding:12px;border-radius:10px;background:rgba(255,255,255,0.03);
